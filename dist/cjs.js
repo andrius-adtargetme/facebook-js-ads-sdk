@@ -204,21 +204,19 @@ FacebookError.prototype.constructor = FacebookError;
 var FacebookRequestError = function (_FacebookError) {
   inherits(FacebookRequestError, _FacebookError);
 
-
   /**
    * @param  {[Object}  response
    * @param  {String}   method
    * @param  {String}   url
    * @param  {Object}   data
    */
-
   function FacebookRequestError(response, method, url, data) {
     classCallCheck(this, FacebookRequestError);
 
     var error = response.body.error;
     var message = error.error_user_msg ? error.error_user_title + ': ' + error.error_user_msg : error.message;
 
-    var _this = possibleConstructorReturn(this, Object.getPrototypeOf(FacebookRequestError).call(this, message));
+    var _this = possibleConstructorReturn(this, (FacebookRequestError.__proto__ || Object.getPrototypeOf(FacebookRequestError)).call(this, message));
 
     _this.name = 'FacebookRequestError';
     _this.message = message;
@@ -451,22 +449,20 @@ var AbstractObject = function () {
 var AbstractCrudObject = function (_AbstractObject) {
   inherits(AbstractCrudObject, _AbstractObject);
 
-
   /**
    * @param  {Object} data Initial data
    * @param  {String} parentId
    * @param  {FacebookAdApi} [api]
    */
-
   function AbstractCrudObject(data, parentId, api) {
     classCallCheck(this, AbstractCrudObject);
 
-    var _this4 = possibleConstructorReturn(this, Object.getPrototypeOf(AbstractCrudObject).call(this, data));
+    var _this4 = possibleConstructorReturn(this, (AbstractCrudObject.__proto__ || Object.getPrototypeOf(AbstractCrudObject)).call(this, data));
 
     _this4._parentId = parentId;
     _this4._api = api || FacebookAdsApi.getDefaultApi();
     if (data) {
-      get(Object.getPrototypeOf(AbstractCrudObject.prototype), 'setData', _this4).call(_this4, data);
+      get(AbstractCrudObject.prototype.__proto__ || Object.getPrototypeOf(AbstractCrudObject.prototype), 'setData', _this4).call(_this4, data);
     }
     return _this4;
   }
@@ -508,7 +504,7 @@ var AbstractCrudObject = function (_AbstractObject) {
     value: function setData(data) {
       var _this6 = this;
 
-      get(Object.getPrototypeOf(AbstractCrudObject.prototype), 'setData', this).call(this, data);
+      get(AbstractCrudObject.prototype.__proto__ || Object.getPrototypeOf(AbstractCrudObject.prototype), 'setData', this).call(this, data);
       Object.keys(data).forEach(function (key) {
         delete _this6._changes[key];
       });
@@ -763,18 +759,16 @@ var AbstractCrudObject = function (_AbstractObject) {
 var Cursor = function (_Array) {
   inherits(Cursor, _Array);
 
-
   /**
    * @param  {Object} sourceObject
    * @param  {Object} targetClass
    * @param  {Object} [params]
    * @param  {String} [endpoint]
    */
-
   function Cursor(sourceObject, targetClass, params, endpoint) {
     classCallCheck(this, Cursor);
 
-    var _this10 = possibleConstructorReturn(this, Object.getPrototypeOf(Cursor).call(this, 0));
+    var _this10 = possibleConstructorReturn(this, (Cursor.__proto__ || Object.getPrototypeOf(Cursor)).call(this, 0));
 
     var next = [sourceObject.getId()];
     next.push(endpoint || targetClass.getEndpoint());
@@ -850,7 +844,7 @@ var AdPreview = function (_AbstractCrudObject) {
 
   function AdPreview() {
     classCallCheck(this, AdPreview);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(AdPreview).apply(this, arguments));
+    return possibleConstructorReturn(this, (AdPreview.__proto__ || Object.getPrototypeOf(AdPreview)).apply(this, arguments));
   }
 
   createClass(AdPreview, null, [{
@@ -896,7 +890,7 @@ var AdCreative = function (_AbstractCrudObject) {
 
   function AdCreative() {
     classCallCheck(this, AdCreative);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(AdCreative).apply(this, arguments));
+    return possibleConstructorReturn(this, (AdCreative.__proto__ || Object.getPrototypeOf(AdCreative)).apply(this, arguments));
   }
 
   createClass(AdCreative, [{
@@ -1057,7 +1051,7 @@ var Insights = function (_AbstractCrudObject) {
 
   function Insights() {
     classCallCheck(this, Insights);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(Insights).apply(this, arguments));
+    return possibleConstructorReturn(this, (Insights.__proto__ || Object.getPrototypeOf(Insights)).apply(this, arguments));
   }
 
   createClass(Insights, null, [{
@@ -1288,7 +1282,7 @@ var Ad = function (_AbstractCrudObject) {
 
   function Ad() {
     classCallCheck(this, Ad);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(Ad).apply(this, arguments));
+    return possibleConstructorReturn(this, (Ad.__proto__ || Object.getPrototypeOf(Ad)).apply(this, arguments));
   }
 
   createClass(Ad, [{
@@ -1438,7 +1432,7 @@ var AdSet = function (_AbstractCrudObject) {
 
   function AdSet() {
     classCallCheck(this, AdSet);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(AdSet).apply(this, arguments));
+    return possibleConstructorReturn(this, (AdSet.__proto__ || Object.getPrototypeOf(AdSet)).apply(this, arguments));
   }
 
   createClass(AdSet, [{
@@ -1627,7 +1621,7 @@ var Campaign = function (_AbstractCrudObject) {
 
   function Campaign() {
     classCallCheck(this, Campaign);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(Campaign).apply(this, arguments));
+    return possibleConstructorReturn(this, (Campaign.__proto__ || Object.getPrototypeOf(Campaign)).apply(this, arguments));
   }
 
   createClass(Campaign, [{
@@ -1794,7 +1788,7 @@ var ProductItem = function (_AbstractCrudObject) {
 
   function ProductItem() {
     classCallCheck(this, ProductItem);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(ProductItem).apply(this, arguments));
+    return possibleConstructorReturn(this, (ProductItem.__proto__ || Object.getPrototypeOf(ProductItem)).apply(this, arguments));
   }
 
   createClass(ProductItem, [{
@@ -1889,7 +1883,7 @@ var ProductSet = function (_AbstractCrudObject) {
 
   function ProductSet() {
     classCallCheck(this, ProductSet);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(ProductSet).apply(this, arguments));
+    return possibleConstructorReturn(this, (ProductSet.__proto__ || Object.getPrototypeOf(ProductSet)).apply(this, arguments));
   }
 
   createClass(ProductSet, [{
@@ -1928,7 +1922,7 @@ var ProductCatalog = function (_AbstractCrudObject) {
 
   function ProductCatalog() {
     classCallCheck(this, ProductCatalog);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(ProductCatalog).apply(this, arguments));
+    return possibleConstructorReturn(this, (ProductCatalog.__proto__ || Object.getPrototypeOf(ProductCatalog)).apply(this, arguments));
   }
 
   createClass(ProductCatalog, [{
@@ -1972,7 +1966,7 @@ var Business = function (_AbstractCrudObject) {
 
   function Business() {
     classCallCheck(this, Business);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(Business).apply(this, arguments));
+    return possibleConstructorReturn(this, (Business.__proto__ || Object.getPrototypeOf(Business)).apply(this, arguments));
   }
 
   createClass(Business, [{
@@ -2010,7 +2004,7 @@ var User = function (_AbstractCrudObject) {
 
   function User() {
     classCallCheck(this, User);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(User).apply(this, arguments));
+    return possibleConstructorReturn(this, (User.__proto__ || Object.getPrototypeOf(User)).apply(this, arguments));
   }
 
   createClass(User, [{
@@ -2097,7 +2091,7 @@ var AdAccount = function (_AbstractCrudObject) {
 
   function AdAccount() {
     classCallCheck(this, AdAccount);
-    return possibleConstructorReturn(this, Object.getPrototypeOf(AdAccount).apply(this, arguments));
+    return possibleConstructorReturn(this, (AdAccount.__proto__ || Object.getPrototypeOf(AdAccount)).apply(this, arguments));
   }
 
   createClass(AdAccount, [{
@@ -2222,6 +2216,36 @@ var AdAccount = function (_AbstractCrudObject) {
   return AdAccount;
 }(AbstractCrudObject);
 
+/**
+ * AdsPixel
+ * @extends AbstractCrudObject
+ * @see {@link https://developers.facebook.com/docs/marketing-api/audiences-api/pixel}
+ */
+
+var AdsPixel = function (_AbstractCrudObject) {
+  inherits(AdsPixel, _AbstractCrudObject);
+
+  function AdsPixel() {
+    classCallCheck(this, AdsPixel);
+    return possibleConstructorReturn(this, (AdsPixel.__proto__ || Object.getPrototypeOf(AdsPixel)).apply(this, arguments));
+  }
+
+  createClass(AdsPixel, null, [{
+    key: 'getEndpoint',
+    value: function getEndpoint() {
+      return 'adspixel';
+    }
+  }, {
+    key: 'Fields',
+    get: function get() {
+      return Object.freeze({
+        name: 'name'
+      });
+    }
+  }]);
+  return AdsPixel;
+}(AbstractCrudObject);
+
 exports.FacebookAdsApi = FacebookAdsApi;
 exports.AdAccount = AdAccount;
 exports.AdCreative = AdCreative;
@@ -2235,4 +2259,5 @@ exports.ProductCatalog = ProductCatalog;
 exports.ProductItem = ProductItem;
 exports.ProductSet = ProductSet;
 exports.User = User;
+exports.AdsPixel = AdsPixel;
 //# sourceMappingURL=cjs.js.map

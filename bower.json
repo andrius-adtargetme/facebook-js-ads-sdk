@@ -28,10 +28,10 @@
     "url": "git://github.com/lucascosta/facebook-js-ads-sdk.git"
   },
   "devDependencies": {
-    "bluebird": "^3.4.1",
-    "chai": "^3.5.0",
-    "mocha": "^2.5.3",
-    "requirejs": "^2.2.0"
+    "bluebird": "3.4.1",
+    "chai": "3.5.0",
+    "mocha": "2.5.3",
+    "requirejs": "2.2.0"
   },
   "main": "./dist/iife.js",
   "license": "MIT"

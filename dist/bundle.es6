@@ -11,3 +11,6 @@ export { default as ProductCatalog } from './../src/objects/product-catalog'
 export { default as ProductItem } from './../src/objects/product-item'
 export { default as ProductSet } from './../src/objects/product-set'
 export { default as User } from './../src/objects/user'
+export { default as AdsPixel } from './../src/objects/ads-pixel'
+
+

@@ -1748,5 +1748,22 @@ class AdAccount extends AbstractCrudObject {
 
 }
 
-export { FacebookAdsApi, AdAccount, AdCreative, AdPreview, AdSet, Ad, Business, Campaign, Insights, ProductCatalog, ProductItem, ProductSet, User };
+/**
+ * AdsPixel
+ * @extends AbstractCrudObject
+ * @see {@link https://developers.facebook.com/docs/marketing-api/audiences-api/pixel}
+ */
+class AdsPixel extends AbstractCrudObject {
+  static get Fields () {
+    return Object.freeze({
+      name: 'name'
+    })
+  }
+
+  static getEndpoint () {
+    return 'adspixel'
+  }
+}
+
+export { FacebookAdsApi, AdAccount, AdCreative, AdPreview, AdSet, Ad, Business, Campaign, Insights, ProductCatalog, ProductItem, ProductSet, User, AdsPixel };
 //# sourceMappingURL=es6.js.map
