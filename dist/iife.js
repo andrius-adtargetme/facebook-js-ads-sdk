@@ -2232,13 +2232,15 @@
     createClass(AdsPixel, null, [{
       key: 'getEndpoint',
       value: function getEndpoint() {
-        return 'adspixel';
+        return 'adspixels';
       }
     }, {
       key: 'Fields',
       get: function get() {
         return Object.freeze({
-          name: 'name'
+          id: 'id',
+          name: 'name',
+          code: 'code'
         });
       }
     }]);

@@ -1756,12 +1756,14 @@ class AdAccount extends AbstractCrudObject {
 class AdsPixel extends AbstractCrudObject {
   static get Fields () {
     return Object.freeze({
-      name: 'name'
+      id: 'id',
+      name: 'name',
+      code: 'code'
     })
   }
 
   static getEndpoint () {
-    return 'adspixel'
+    return 'adspixels'
   }
 }
 
