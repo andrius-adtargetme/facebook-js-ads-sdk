@@ -6,6 +6,7 @@ import AdSet from './ad-set'
 import Campaign from './campaign'
 import Insights from './insights'
 import User from './user'
+import CustomAudience from './custom-audience'
 
 /**
  * AdAccount
@@ -120,4 +121,7 @@ export default class AdAccount extends AbstractCrudObject {
     return this.getEdge(User, fields, params, fetchFirstPage)
   }
 
+  getCustomAudiences (fields, params, fetchFirstPage) {
+    return this.getEdge(CustomAudience, fields, params, fetchFirstPage)
+  }
 }
