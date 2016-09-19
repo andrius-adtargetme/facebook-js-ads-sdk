@@ -3,7 +3,7 @@ import { AbstractCrudObject } from './../core'
 /**
  * AdsPixel
  * @extends AbstractCrudObject
- * @see {@link https://developers.facebook.com/docs/marketing-api/audiences-api/pixel}
+ * @see {@link https://developers.facebook.com/docs/marketing-api/facebook-pixel/}
  */
 export default class AdsPixel extends AbstractCrudObject {
   static get Fields () {

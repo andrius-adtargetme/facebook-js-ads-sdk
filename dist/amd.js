@@ -2217,7 +2217,7 @@ define(['exports'], function (exports) { 'use strict';
   /**
    * AdsPixel
    * @extends AbstractCrudObject
-   * @see {@link https://developers.facebook.com/docs/marketing-api/audiences-api/pixel}
+   * @see {@link https://developers.facebook.com/docs/marketing-api/facebook-pixel/}
    */
 
   var AdsPixel = function (_AbstractCrudObject) {
@@ -2246,6 +2246,86 @@ define(['exports'], function (exports) { 'use strict';
     return AdsPixel;
   }(AbstractCrudObject);
 
+  /**
+   * CustomAudience
+   * @extends AbstractCrudObject
+   * @see {@link https://developers.facebook.com/docs/marketing-api/facebook-pixel/website-custom-audiences}
+   */
+
+  var CustomAudience = function (_AbstractCrudObject) {
+    inherits(CustomAudience, _AbstractCrudObject);
+
+    function CustomAudience() {
+      classCallCheck(this, CustomAudience);
+      return possibleConstructorReturn(this, (CustomAudience.__proto__ || Object.getPrototypeOf(CustomAudience)).apply(this, arguments));
+    }
+
+    createClass(CustomAudience, null, [{
+      key: 'getEndpoint',
+      value: function getEndpoint() {
+        return 'customaudiences';
+      }
+    }, {
+      key: 'Fields',
+      get: function get() {
+        return Object.freeze({
+          id: 'id',
+          name: 'name',
+          pixel_id: 'pixel_id',
+          subtype: 'subtype',
+          rule: 'rule',
+          retention_days: 'retention_days',
+          prefill: 'prefill',
+          claim_objective: 'claim_objective',
+          content_type: 'content_type',
+          dataset_id: 'dataset_id',
+          description: 'description',
+          event_source_group: 'event_source_group',
+          list_of_accounts: 'list_of_accounts',
+          lookalike_spec: 'lookalike_spec',
+          opt_out_link: 'opt_out_link',
+          origin_audience_id: 'origin_audience_id',
+          product_set_id: 'product_set_id'
+        });
+      }
+    }, {
+      key: 'ClaimObjective',
+      get: function get() {
+        return Object.freeze({
+          product: 'PRODUCT',
+          travel: 'TRAVEL'
+        });
+      }
+    }, {
+      key: 'ContentType',
+      get: function get() {
+        return Object.freeze({
+          flight: 'FLIGHT',
+          hotel: 'HOTEL'
+        });
+      }
+    }, {
+      key: 'Subtype',
+      get: function get() {
+        return Object.freeze({
+          custom: 'CUSTOM',
+          website: 'WEBSITE',
+          app: 'APP',
+          offline_conversion: 'OFFLINE_CONVERSION',
+          claim: 'CLAIM',
+          partner: 'PARTNER',
+          managed: 'MANAGED',
+          video: 'VIDEO',
+          lookalike: 'LOOKALIKE',
+          engagement: 'ENGAGEMENT',
+          data_set: 'DATA_SET',
+          bag_of_accounts: 'BAG_OF_ACCOUNTS'
+        });
+      }
+    }]);
+    return CustomAudience;
+  }(AbstractCrudObject);
+
   exports.FacebookAdsApi = FacebookAdsApi;
   exports.AdAccount = AdAccount;
   exports.AdCreative = AdCreative;
@@ -2260,6 +2340,7 @@ define(['exports'], function (exports) { 'use strict';
   exports.ProductSet = ProductSet;
   exports.User = User;
   exports.AdsPixel = AdsPixel;
+  exports.CustomAudience = CustomAudience;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
