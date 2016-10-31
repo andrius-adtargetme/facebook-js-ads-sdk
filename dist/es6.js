@@ -965,6 +965,25 @@ class Insights extends AbstractCrudObject {
 }
 
 /**
+ * ClickTrackingTag
+ * @extends AbstractCrudObject
+ * @see {@link https://developers.facebook.com/docs/marketing-api/click-tags/}
+ */
+class ClickTrackingTag extends AbstractCrudObject {
+  static get Fields () {
+    return Object.freeze({
+      id: 'id',
+      url: 'url',
+      add_template_param: 'add_template_param'
+    })
+  }
+
+  static getEndpoint () {
+    return 'trackingtag'
+  }
+}
+
+/**
  * Ad
  * @extends AbstractCrudObject
  * @see {@link https://developers.facebook.com/docs/marketing-api/reference/adgroup}
@@ -1089,6 +1108,10 @@ class Ad extends AbstractCrudObject {
 
   getInsights (fields, params, fetchFirstPage) {
     return this.getEdge(Insights, fields, params, fetchFirstPage)
+  }
+
+  getClickTrackingTag (fields, params, fetchFirstPage) {
+    return this.getEdge(ClickTrackingTag, fields, params, fetchFirstPage)
   }
 }
 
@@ -1834,5 +1857,5 @@ class AdsPixel extends AbstractCrudObject {
   }
 }
 
-export { FacebookAdsApi, AdAccount, AdCreative, AdPreview, AdSet, Ad, Business, Campaign, Insights, ProductCatalog, ProductItem, ProductSet, User, AdsPixel, CustomAudience };
+export { FacebookAdsApi, AdAccount, AdCreative, AdPreview, AdSet, Ad, Business, Campaign, Insights, ProductCatalog, ProductItem, ProductSet, User, AdsPixel, CustomAudience, ClickTrackingTag };
 //# sourceMappingURL=es6.js.map

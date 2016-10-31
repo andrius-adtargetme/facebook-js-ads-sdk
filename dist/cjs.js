@@ -1272,6 +1272,38 @@ var Insights = function (_AbstractCrudObject) {
 }(AbstractCrudObject);
 
 /**
+ * ClickTrackingTag
+ * @extends AbstractCrudObject
+ * @see {@link https://developers.facebook.com/docs/marketing-api/click-tags/}
+ */
+
+var ClickTrackingTag = function (_AbstractCrudObject) {
+  inherits(ClickTrackingTag, _AbstractCrudObject);
+
+  function ClickTrackingTag() {
+    classCallCheck(this, ClickTrackingTag);
+    return possibleConstructorReturn(this, (ClickTrackingTag.__proto__ || Object.getPrototypeOf(ClickTrackingTag)).apply(this, arguments));
+  }
+
+  createClass(ClickTrackingTag, null, [{
+    key: 'getEndpoint',
+    value: function getEndpoint() {
+      return 'trackingtag';
+    }
+  }, {
+    key: 'Fields',
+    get: function get() {
+      return Object.freeze({
+        id: 'id',
+        url: 'url',
+        add_template_param: 'add_template_param'
+      });
+    }
+  }]);
+  return ClickTrackingTag;
+}(AbstractCrudObject);
+
+/**
  * Ad
  * @extends AbstractCrudObject
  * @see {@link https://developers.facebook.com/docs/marketing-api/reference/adgroup}
@@ -1294,6 +1326,11 @@ var Ad = function (_AbstractCrudObject) {
     key: 'getInsights',
     value: function getInsights(fields, params, fetchFirstPage) {
       return this.getEdge(Insights, fields, params, fetchFirstPage);
+    }
+  }, {
+    key: 'getClickTrackingTag',
+    value: function getClickTrackingTag(fields, params, fetchFirstPage) {
+      return this.getEdge(ClickTrackingTag, fields, params, fetchFirstPage);
     }
   }], [{
     key: 'getEndpoint',
@@ -2348,4 +2385,5 @@ exports.ProductSet = ProductSet;
 exports.User = User;
 exports.AdsPixel = AdsPixel;
 exports.CustomAudience = CustomAudience;
+exports.ClickTrackingTag = ClickTrackingTag;
 //# sourceMappingURL=cjs.js.map

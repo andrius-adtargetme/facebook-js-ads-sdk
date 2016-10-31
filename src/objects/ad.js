@@ -1,6 +1,7 @@
 import { AbstractCrudObject } from './../core'
 import AdCreative from './ad-creative'
 import Insights from './insights'
+import ClickTrackingTag from './click-tracking-tag'
 
 /**
  * Ad
@@ -127,5 +128,9 @@ export default class Ad extends AbstractCrudObject {
 
   getInsights (fields, params, fetchFirstPage) {
     return this.getEdge(Insights, fields, params, fetchFirstPage)
+  }
+
+  getClickTrackingTag (fields, params, fetchFirstPage) {
+    return this.getEdge(ClickTrackingTag, fields, params, fetchFirstPage)
   }
 }
