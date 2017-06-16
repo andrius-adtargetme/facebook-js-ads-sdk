@@ -8,17 +8,16 @@ import { AbstractCrudObject } from './../core'
 export default class AdImage extends AbstractCrudObject {
   static get Fields () {
     return Object.freeze({
-      id: 'id',
       account_id: 'account_id',
       created_time: 'created_time',
       creatives: 'creatives',
       hash: 'hash',
       height: 'height',
-      last_used_time: 'last_used_time',
+      id: 'id',
+      is_associated_creatives_in_adgroups: 'is_associated_creatives_in_adgroups',
       name: 'name',
       original_height: 'original_height',
       original_width: 'original_width',
-      owner_business: 'owner_business',
       permalink_url: 'permalink_url',
       status: 'status',
       updated_time: 'updated_time',
@@ -27,7 +26,8 @@ export default class AdImage extends AbstractCrudObject {
       width: 'width',
       bytes: 'bytes',
       copy_from: 'copy_from',
-      zipbytes: 'zipbytes'
+      zipbytes: 'zipbytes',
+      filename: 'filename'
     })
   }
 

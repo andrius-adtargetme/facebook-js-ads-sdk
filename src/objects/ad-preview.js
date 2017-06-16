@@ -21,9 +21,13 @@ export default class AdPreview extends AbstractCrudObject {
       mobile_interstitial: 'MOBILE_INTERSTITIAL',
       mobile_banner: 'MOBILE_BANNER',
       mobile_medium_rectangle: 'MOBILE_MEDIUM_RECTANGLE',
+      mobile_fullwidth: 'MOBILE_FULLWIDTH',
       mobile_native: 'MOBILE_NATIVE',
       instagram_standard: 'INSTAGRAM_STANDARD',
-      audience_network_outstream_video: 'AUDIENCE_NETWORK_OUTSTREAM_VIDEO'
+      audience_network_outstream_video: 'AUDIENCE_NETWORK_OUTSTREAM_VIDEO',
+      instant_article_standard: 'INSTANT_ARTICLE_STANDARD',
+      instream_video_desktop: 'INSTREAM_VIDEO_DESKTOP',
+      instream_video_mobile: 'INSTREAM_VIDEO_MOBILE'
     })
   }
 

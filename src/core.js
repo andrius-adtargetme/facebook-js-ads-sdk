@@ -125,6 +125,14 @@ export class AbstractCrudObject extends AbstractObject {
   }
 
   /**
+   * Export object data
+   * @return {Object}
+   */
+  exportAllData () {
+    return this._data
+  }
+
+  /**
    * Clear change history
    * @return this
    */
@@ -205,7 +213,12 @@ export class AbstractCrudObject extends AbstractObject {
     params = Object.assign(params, this.exportData())
     return new Promise((resolve, reject) => {
       api.call('POST', path, params)
-      .then((data) => resolve(this.setData(data)))
+      .then((data) => {
+        if (path.indexOf('adimages') > -1) {
+          data = data.images[params.name]
+        }
+        resolve(this.setData(data))
+      })
       .catch(reject)
     })
   }
