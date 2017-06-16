@@ -15,8 +15,6 @@ export { default as ProductItem } from './../src/objects/product-item'
 export { default as ProductSet } from './../src/objects/product-set'
 export { default as ReachFrequencyPrediction } from './../src/objects/reach-frequency-prediction'
 export { default as User } from './../src/objects/user'
-export { default as AdsPixel } from './../src/objects/ads-pixel'
-export { default as CustomAudience } from './../src/objects/custom-audience'
 export { default as ClickTrackingTag } from './../src/objects/click-tracking-tag'
 
 
